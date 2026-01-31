@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUDS</title>
+    <link rel="stylesheet" href="projet.css">
+</head>
+<body>
+    <div class="cruds">
+        <div class="head">
+            <h2>Cruds</h2>
+            <p>Product Management System</p>
+        </div>
+        <div class="inputs">
+            <input type="text" placeholder="title" id="title">
+            <p id="titleError"></p>
+            <div class="price">
+         
+                <input onkeyup="getTotale()" type="number" placeholder="price" id="price">
+                <p id="priceError"></p>
+                <input onkeyup="getTotale()" type="number" placeholder="taxes" id="taxes">
+                <p id="taxesError"></p>
+                <input onkeyup="getTotale()" type="number" placeholder="ads" id="ads">
+                <p id="adsError"></p>
+                <input onkeyup="getTotale()" type="number" placeholder="discount" id="discount">
+                <p id="discountError"></p>
+                <small id="total"></small>
+            </div>
+            <input type="number" placeholder="count" id="count">
+            <p id="countError"></p>
+            <input type="text" placeholder="category" id="category">
+            <p id="categoryError"></p>
+            <button id="submit"> create</button>
+        </div>
+        <div class="outputs">
+            <div class="searchblock">
+                <input type="text" placeholder="Search" id="search">
+             <div class="btnsearch">
+                <button id="searchTitle"> Search By Tilte</button>
+                <button id="searchCatgory"> Search By Category</button>
+             </div>
+            </div>
+       <div id="deleteAll"></div>
+            <table>
+                <tr>
+                    <th>id</th>
+                    <th>title</th>
+                    <th>price</th>
+                    <th>taxes</th>
+                    <th>ads</th>
+                    <th>discount</th>
+                    <th>total</th>
+                    <th>category</th>
+                    <th>update</th>
+                    <th>delete</th>
+                </tr>
+                <tbody id="tbody">
+          
+                </tbody>
+            </table>
+        </div>
+    </div>
+<script src="projet.js"></script>    
+</body>
+</html>
