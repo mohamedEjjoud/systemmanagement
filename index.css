@@ -83,40 +83,93 @@ td {
   margin: 22px 0;
 }
 
-@media screen and (max-width: 768px) {
+/* --- 1. Style l-3adi (Desktop/PC) --- */
+.outputs {
+  width: 100%;
+  margin-top: 20px;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  margin: 10px 0;
+}
+
+/* --- 2. L-islah dial Tablet o iPad (max-width: 992px) --- */
+/* Zadna l-width swiya bach n-cheddou hta l-tablets l-kbar */
+@media screen and (max-width: 992px) {
   .cruds {
-    width: 95%;
+    width: 90%;
   }
+
+  .price {
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content bach i-welliw m-nasbin m3a l-janbayn */
+    justify-content: space-between; 
+    gap: 15px 0; /* 15px bin l-stora, o 0 f l-janb hit ghadi n-khdmo b % */
+  }
+
   .price input {
-    width: 40%;
+    /* calc(50% - 10px) kaddmen lik 2 inputs f ster wahed m3a l-faraagh */
+    width: calc(50% - 10px) !important; 
+    margin: 0 !important;
+    box-sizing: border-box;
   }
+
+  /* Had l-input dial total khassu i-welli 100% bach i-ji t-ht l-arba3a kamlin */
+  #total {
+    width: 100%;
+    margin-top: 10px;
+    display: block;
+    text-align: center;
+  }
+
   .btnsearch {
-    flex-direction: row;
-    gap: 4%;
+    display: flex;
+    gap: 10px;
   }
+
   .btnsearch button {
-    width: 48%;
+    width: 49%;
   }
 }
 
-@media screen and (max-width: 480px) {
-  .price input {
-    width: 100%;
-  }
-  .btnsearch {
-    flex-direction: column;
-    gap: 5px;
-  }
-  .btnsearch button {
-    width: 100%;
-  }
-  table th,
-  table td {
-    font-size: 12px;
-    padding: 3px;
-  }
-  input,
-  button {
-    height: 35px;
-  }
+/* --- 3. Media Query dial Mobile (max-width: 600px) --- */
+@media screen and (max-width: 600px) {
+    /* Khbi l-khanaat li mabghitish f tèlè */
+    table tr th:nth-child(4), table tr td:nth-child(4),
+    table tr th:nth-child(5), table tr td:nth-child(5),
+    table tr th:nth-child(6), table tr td:nth-child(6),
+    table tr th:nth-child(8), table tr td:nth-child(8) {
+        display: none !important;
+    }
+
+    /* F tèlè sghir, red kulla input f ster (100%) bach i-ji sahel */
+    .price input {
+        width: 100% !important;
+    }
+
+    .btnsearch {
+        flex-direction: column;
+    }
+    
+    .btnsearch button {
+        width: 100%;
+    }
+
+    table th, table td {
+        font-size: 11px;
+        padding: 8px 2px;
+    }
+
+    .outputs {
+        overflow-x: hidden; 
+    }
+    
+    table {
+        min-width: 100%; 
+    }
 }
