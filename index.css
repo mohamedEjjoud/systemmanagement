@@ -1,0 +1,185 @@
+* {
+  margin: 0;
+  padding: 0;
+  color: aliceblue;
+}
+p {
+  display: inline-block;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: aliceblue;
+  background-color: rgba(10, 10, 10, 0.909);
+}
+.cruds {
+  margin: auto;
+  width: 80%;
+}
+.head {
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+input {
+  width: 100%;
+  height: 40px;
+  outline: none;
+  border: none;
+  background-color: #1a1a1a;
+  margin: 5px 0;
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: aliceblue !important;
+  box-sizing: border-box;
+  -webkit-text-fill-color: aliceblue;
+  caret-color: aliceblue;
+  font-size: 16px; 
+  line-height: 40px; 
+}
+input:focus {
+ 
+  background-color: #000000;
+  color: aliceblue !important;
+  -webkit-text-fill-color: aliceblue;
+  caret-color: aliceblue;
+}
+
+.price input {
+  width: 20%;
+}
+#total {
+  background: red;
+  border-radius: 5px;
+  padding: 5px 3px;
+}
+#total::before {
+  content: "total : ";
+}
+button {
+  width: 100%;
+  height: 30px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  color: aliceblue;
+  transition: 0.5s;
+  background-color: rgb(51, 7, 92);
+}
+button:hover {
+  letter-spacing: 1px;
+  background-color: rgba(113, 3, 113, 0.922);
+}
+.btnsearch {
+  display: flex;
+  justify-content: space-between;
+}
+.btnsearch button {
+  width: 46%;
+}
+table {
+  width: 100%;
+  text-align: center;
+  margin: 10px 0;
+}
+table th {
+  text-transform: uppercase;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+th,
+td {
+  padding: 5px;
+}
+#deleteAll {
+  margin: 22px 0;
+}
+
+/* --- 1. Style l-3adi (Desktop/PC) --- */
+.outputs {
+  width: 100%;
+  margin-top: 20px;
+  overflow-x: hidden;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  margin: 10px 0;
+}
+
+/* --- 2. L-islah dial Tablet o iPad (max-width: 992px) --- */
+/* Zadna l-width swiya bach n-cheddou hta l-tablets l-kbar */
+@media screen and (max-width: 992px) {
+  .cruds {
+    width: 90%;
+  }
+
+  .price {
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content bach i-welliw m-nasbin m3a l-janbayn */
+    justify-content: space-between; 
+    gap: 15px 0; /* 15px bin l-stora, o 0 f l-janb hit ghadi n-khdmo b % */
+  }
+
+  .price input {
+    /* calc(50% - 10px) kaddmen lik 2 inputs f ster wahed m3a l-faraagh */
+    width: calc(50% - 10px) !important; 
+    margin: 0 !important;
+    box-sizing: border-box;
+  }
+
+  /* Had l-input dial total khassu i-welli 100% bach i-ji t-ht l-arba3a kamlin */
+  #total {
+    width: 100%;
+    margin-top: 10px;
+    display: block;
+    text-align: center;
+  }
+
+  .btnsearch {
+    display: flex;
+    gap: 10px;
+  }
+
+  .btnsearch button {
+    width: 49%;
+  }
+}
+
+/* --- 3. Media Query dial Mobile (max-width: 600px) --- */
+@media screen and (max-width: 600px) {
+    /* Khbi l-khanaat li mabghitish f tèlè */
+    table tr th:nth-child(4), table tr td:nth-child(4),
+    table tr th:nth-child(5), table tr td:nth-child(5),
+    table tr th:nth-child(6), table tr td:nth-child(6),
+    table tr th:nth-child(8), table tr td:nth-child(8) {
+        display: none !important;
+    }
+
+    /* F tèlè sghir, red kulla input f ster (100%) bach i-ji sahel */
+    .price input {
+        width: 100% !important;
+    }
+
+    .btnsearch {
+        flex-direction: column;
+    }
+    
+    .btnsearch button {
+        width: 100%;
+    }
+
+    table th, table td {
+        font-size: 11px;
+        padding: 8px 2px;
+    }
+
+    .outputs {
+        overflow-x: hidden; 
+    }
+    
+    table {
+        min-width: 100%; 
+    }
+}
