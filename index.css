@@ -48,7 +48,7 @@ input:focus {
   width: 20%;
 }
 #total {
-  background: red;
+  background: rgb(30, 0, 255);
   border-radius: 5px;
   padding: 5px 3px;
 }
